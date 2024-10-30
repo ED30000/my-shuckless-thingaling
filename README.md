@@ -1,1 +1,1 @@
-I do like Suckless, but i wouldn't mind Astolfo sucking me.
+I do like Suckless software as it's based.
