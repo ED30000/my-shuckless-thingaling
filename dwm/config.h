@@ -77,7 +77,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termsmall } },
+	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = termsmall } },
 	{ MODKEY,                       XK_v,      spawn,          {.v = vim } },
 	{ MODKEY,                       XK_s,      spawn,          SHCMD("/home/edvin/.local/bin/shutdown.sh") },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("/home/edvin/.local/bin/keyboard.sh") },
