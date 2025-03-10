@@ -1,0 +1,41 @@
+#!/bin/sh
+
+choice="ls /home/edvin/.local/share/images/wallpapers/"
+dest="echo -e 1\n2\n3\n4\n5\n6\n7\n8\n9"
+confirm="echo -e No\nYes\nPreview\nBack"
+
+prompt(){
+	PROMPT=$1
+	CHOICE=$2
+	CMD=$3
+
+	echo "$CHOICE"
+
+	numchoices=$($CHOICE | wc -l)
+	chosen=$($CHOICE | dmenu -p "$PROMPT" -l "$numchoices")
+	echo "$chosen"
+
+	case $chosen in 
+		*.png)
+			SEL="$chosen"
+			prompt "Confirm" "$confirm"
+			;;
+		"Yes")
+			prompt "Tag?" "$dest"
+			;;
+		"No")
+			return
+			;;
+		"Preview")
+			/usr/local/bin/nsxiv /home/edvin/.local/share/images/wallpapers/"$SEL"
+			prompt "Confirm?" "$confirm"
+			;;
+		"Back")
+			prompt "Change Wallpaper?" "$choice" 
+			;;
+		*)
+			sudo ln -Lf /home/edvin/.local/share/images/wallpapers/"$SEL" /home/edvin/.local/share/wallpapers/"$chosen"
+			;;
+	esac
+}
+prompt "Change Wallpaper?" "$choice"
