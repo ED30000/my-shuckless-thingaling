@@ -1,1 +1,1 @@
-do you thinaling?
+Do you want to see my suckless thinaling?
