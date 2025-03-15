@@ -1,1 +1,1 @@
-I do like Suckless software as it's based.
+do you thinaling?
