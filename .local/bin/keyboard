@@ -16,12 +16,12 @@ prompt(){
 		"SE")
 			setxkbmap fi
 			options
-			herbe "Keyboard layout SE" & 
+			herbe "Keyboard layout snow speak" & 
 			;;
 		"US")
 			setxkbmap us
 			options
-			herbe "Keyboard layout US" &
+			herbe "Keyboard layout hamburger" &
 			;;
 	esac
 }
