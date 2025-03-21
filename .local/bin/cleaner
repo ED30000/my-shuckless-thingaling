@@ -1,0 +1,11 @@
+#!/bin/sh
+
+rm -rf *.o
+rm -rf *.rej
+rm -rf 	*.orig
+rm -rf 	*.core
+rm -rf 	*.log
+rm -rf *.diff
+rm -rf *.diff.txt
+
+herbe "cleaned $(pwd)" &

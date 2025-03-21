@@ -1,0 +1,29 @@
+#!/bin/sh
+
+choice="Cancel\nUS\nSE\n"
+options=$(setxkbmap -option caps:escape)
+
+prompt(){
+	PROMPT=$1
+	CHOICE=$2
+	CMD=$3
+
+	numchoices=$(printf "$CHOICE" | wc -l)
+	chosen=$(printf "$CHOICE" | dmenu -p "$PROMPT" -l "$numchoices")
+	echo "$chosen"
+
+	case $chosen in 
+		"SE")
+			setxkbmap fi
+			options
+			herbe "Keyboard layout SE" & 
+			;;
+		"US")
+			setxkbmap us
+			options
+			herbe "Keyboard layout US" &
+			;;
+	esac
+}
+
+prompt "KBLayout?" $choice 

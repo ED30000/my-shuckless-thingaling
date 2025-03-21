@@ -1,0 +1,30 @@
+#!/bin/sh
+
+choice="Cancel\nReboot\nShutdown\n"
+confirm="No\nYes\n"
+
+prompt(){
+	PROMPT=$1
+	CHOICE=$2
+	CMD=$3
+	MSG=$4
+
+	numchoices=$(printf "$CHOICE" | wc -l)
+	chosen=$(printf "$CHOICE" | dmenu -p "$PROMPT" -l "$numchoices")
+	echo "$chosen"
+
+	case $chosen in 
+		"Reboot")
+			prompt "Confirm" $confirm "sudo reboot" "Rebooting!"
+			;;
+		"Shutdown")
+			prompt "Confirm" $confirm "sudo shutdown -h now" "Shuting down!"	
+			;;
+		"Yes")
+			herbe "$MSG" & 
+			$CMD
+			;;
+	esac
+}
+
+prompt "Shutdown?" $choice 

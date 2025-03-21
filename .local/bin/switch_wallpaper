@@ -1,0 +1,6 @@
+#!/bin/sh
+
+MON="$(xrandr --listmonitors | awk '{print $4}' | sed -n "$(($1+2))p")"
+IMG="/home/edvin/.local/share/wallpapers/$2"
+
+xwallpaper --output "${MON}" --zoom "${IMG}"
