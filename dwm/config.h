@@ -6,8 +6,8 @@ static const unsigned int gappx     = 12;        /* gaps between windows */
 static const unsigned int snap      = 0;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "spleen:size=10" };
-static const char dmenufont[]       = "spleen:size=10";
+static const char *fonts[]          = { "{Your Font}:size=10" };
+static const char dmenufont[]       = "{Your Font}:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -80,10 +80,6 @@ static Keychord *keychords[] = {
 	/* Keychord?    Keys                                             Function        Argument */
 	/*						Prompts					*/
 	&((Keychord){2, {PROMPTCHORD, {PROMPTMOD, XK_l}},		spawn,          {.v = dmenucmd } }),
-	&((Keychord){2, {PROMPTCHORD, {PROMPTMOD, XK_l}},		spawn,          SHCMD("audiodevice_selector.sh") }),
-	&((Keychord){2, {PROMPTCHORD, {PROMPTMOD, XK_l}},		spawn,          SHCMD("keyboard.sh") }),
-	&((Keychord){2, {PROMPTCHORD, {PROMPTMOD, XK_l}},		spawn,          SHCMD("reader.sh") }),
-	&((Keychord){2, {PROMPTCHORD, {PROMPTMOD, XK_l}},		spawn,          SHCMD("shutdown.sh") }),
 	/*						Layouts					*/
 	&((Keychord){2, {LAYOUTCHORD, {LAYOUTMOD, XK_t}},		setlayout,      {.v = &layouts[0]} }),
 	&((Keychord){2, {LAYOUTCHORD, {LAYOUTMOD, XK_f}},		setlayout,      {.v = &layouts[1]} }),
@@ -94,7 +90,6 @@ static Keychord *keychords[] = {
 	/*						Spawn Programs				*/
 	&((Keychord){1, {{MODKEY|ShiftMask, XK_Return}},		spawn,          {.v = termcmd } }),
 	&((Keychord){2, {{MODKEY, XK_e}, {MODKEY, XK_e}},		spawn,          {.v = termcmd } }),
-	&((Keychord){1, {{MODKEY|ShiftMask, XK_l}},			spawn,          SHCMD("slock") }),
 	/*						Window Manipulations			*/
 	&((Keychord){1, {{WINDOWMOD, XK_j}},				focusstack,     {.i = +1 } }),
 	&((Keychord){1, {{WINDOWMOD, XK_k}},				focusstack,     {.i = -1 } }),
