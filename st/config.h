@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "NeoSpleenNerdFont:size=12";
+static char *font = "{Your Font}:size=12";
 static int borderpx = 2;
 
 /*
