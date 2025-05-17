@@ -1,0 +1,6 @@
+#!/bin/sh
+
+st &
+xsetroot -gray
+slstatus &
+exec ./dwm
